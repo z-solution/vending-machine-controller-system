@@ -1,0 +1,1 @@
+ng g page main

@@ -1,0 +1,67 @@
+ion-header, ion-content, ion-footer {
+  --ion-background-color: var(--ion-color-grey-rgb);
+  background-color: var(--ion-color-grey-rgb);
+}
+ion-header div, ion-footer div, .background-color {
+    background-color: var(--ion-color-grey-rgb);
+    --background: var(--ion-color-grey-rgb);
+}
+
+.text-to-user {
+  height: 50px;
+  padding: 5px 10px;
+  .output-display {
+      border: 2px solid #FFFFFF;
+      border-radius: 5px;
+      height: 40px;
+      padding: 0 20px;
+      .output-panel {
+          background-color: rgb(147, 247, 54);
+          height: 30px;
+          margin-top: 3px;
+          padding: 5px 10px;
+      }
+  }
+}
+
+.drink-selection {
+  height: 140px;
+  width: 100%;
+  background-color: #CCCCCC;
+  overflow: hidden;
+  white-space: nowrap;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll {
+    overflow: auto;
+    height: 100%;
+    > div {
+      display: inline-block;
+      height: calc(100% - 40px);
+      margin: 20px 10px;
+    }
+    .drink-brand {
+        text-align: center;
+        width: 100px;
+        background-color: #FFFFFF;
+        > img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+  }
+}
+
+.output {
+  border: solid 2px white;
+  background-image: linear-gradient(var(--ion-color-darkgrey-rgb), var(--ion-color-grey-rgb));
+  margin: 10px;
+  height: 50px;
+  &.coin {
+      width: 50px;
+      display: inline-block;
+      position: relative;
+      right: 0;
+  }
+}

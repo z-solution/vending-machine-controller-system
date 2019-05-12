@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar class="background-color">
+    <ion-title>Vimto Vending Machine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Message -->
+  <div class="text-to-user">
+      <div class="output-display">
+        <div class="output-panel">
+          {{ textToUser }}
+        </div>
+      </div>
+    </div>
+    
+  <!-- Drink selection -->
+  <div class="drink-selection">
+    <div class="scroll" scrollX="true">
+      <!-- <span *ngFor="let item of items | async">{{item.ProjectEvent}}</div> -->
+      <div class="drink-brand" *ngFor="let brand of brands">
+        <img src="{{ brand.image }}">
+        <div>
+          {{ brand.name | uppercase }} <br>
+          MYR {{ brand.price | number: '1.2-2'}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action -->
+  <div class="ion-text-right">
+    <ion-button color="primary">Insert</ion-button>
+    <ion-button color="warning">Terminate</ion-button>
+  </div>
+</ion-content>
+<ion-footer>
+  <!-- Output -->
+  <div class="ion-text-right">
+    <div class="output coin">
+    </div>
+  </div>
+  <div class="output drink">
+  </div>
+</ion-footer>
