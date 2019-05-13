@@ -1,46 +1,92 @@
 <ion-header>
   <ion-toolbar class="background-color">
-    <ion-title>Vimto Vending Machine</ion-title>
+    <ion-title>VIMTO SOFT DRINK DISPENCER</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <!-- Message -->
-  <div class="text-to-user">
-    <div class="output-display">
-      <div class="output-panel">
-        {{ textToUser }}
+  <div class="insert-coin">
+    <div class="insert-coin1">INSERT COIN HERE</div>
+    <div class="insert-coin2">
+      <div class="insert-coin2-1">
+        <div class="insert-coin2-2">
+        </div>
       </div>
     </div>
+    <div class="insert-coin3">COINS NOT VALID</div>
   </div>
 
-  <!-- Drink selection -->
-  <div class="drink-selection">
-    <div class="scroll" scrollX="true">
-      <!-- <span *ngFor="let item of items | async">{{item.ProjectEvent}}</div> -->
-      <div class="drink-brand" *ngFor="let brand of brands">
-        <img src="{{ brand.image }}">
-        <div>
-          {{ brand.name | uppercase }} <br>
+
+  <div class="total-insert-coin">
+    <div class="total-insert-coin1">TOTAL MONEY INSERTED</div>
+    <div class="total-insert-coin3">{{ coinValue }}</div>
+  </div>
+
+
+  <div class="drink-selection-table">
+    <table>
+      <tr>
+        <th class="column1">SELECT DRINK BRAND BELOW</th>
+        <th class="column2">PRICE</th>
+        <th class="column3"></th>
+        <th class="column4">PRESS TO SELECT</th>
+      </tr>
+      <tr *ngFor="let brand of brands">
+        <td>
+          {{ brand.name | uppercase }}
+        </td>
+        <td>
           MYR {{ brand.price | number: '1.2-2'}}
+        </td>
+        <td></td>
+        <td>
+          <div class="drink-selection-button"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="no-charge-available">
+    NO CHARGE AVAILABLE
+  </div>
+
+
+  <div class="termination">
+    <div class="termination1">
+      <div class="termination-text">
+        PRESS HERE TO RETURN CASH AND TERMINATE TRANSACTION HERE
+      </div>
+      <div class="termination2">
+        <div class="termination2-1">
+          <div class="termination2-2">
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Action -->
-  <div class="ion-text-right">
-    <ion-button color="primary" (click)="insertCoin()">Insert</ion-button>
-    <ion-button color="warning">Terminate</ion-button>
-  </div>
-</ion-content>
-<ion-footer>
-  <!-- Output -->
-  <div class="ion-text-right">
-    <div class="output coin">
+
+  <div class="collect-change">
+    <div class="collect-change1">COLLECT CHANGE/RETURNED CASH HERE
+      <div class="collect-change2">
+        <div class="collect-change2-1">
+          <div class="collect-change2-2">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="output drink">
-  </div>
-</ion-footer>
+
+
+  <div class="collect-can">
+      <div class="collect-can1">COLLECT CAN HERE
+      </div>
+      <div class="collect-can2">
+          <div class="collect-can2-1">
+            <div class="collect-can2-2">
+            </div>
+          </div>
+        </div>
+    </div>
+</ion-content>

@@ -19,4 +19,8 @@ export class InsertCoinComponent implements OnInit {
       this.modal.dismiss();
     }
   }
+
+  selectCoin(value: number) {
+    this.modal.dismiss(value);
+  }
 }

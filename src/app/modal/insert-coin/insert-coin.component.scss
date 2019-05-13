@@ -1,17 +1,33 @@
 .background-cover {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #000000;
-    opacity: 0.75;
-    z-index: 50;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.75;
+  z-index: 50;
 }
 .background {
   background-color: #ffffff;
   width: 80%;
-  height: 60%;
+  height: 300px;
   margin: auto;
   z-index: 55;
+  h3 {
+    text-align: center;
+  }
+  .coin-container {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 10px;
+    > div {
+      flex: 1;
+      text-align: center;
+      > img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
 }

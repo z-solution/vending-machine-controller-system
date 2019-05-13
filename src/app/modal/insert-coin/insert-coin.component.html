@@ -3,5 +3,39 @@
 </div>
 
 <div class="background">
-
+    <h3>Select coin to insert</h3>
+    <div class="coin-container">
+        <div (click)="selectCoin(0.1);">
+            <img src="./assets/image/10cent.png">
+            <div>
+                10 cent
+            </div>
+        </div>
+        <div (click)="selectCoin(0.2);">
+            <img src="./assets/image/20cent.png">
+            <div>
+                20 cent
+            </div>
+        </div>
+        <div (click)="selectCoin(0.5);">
+            <img src="./assets/image/50cent.png">
+            <div>
+                50 cent
+            </div>
+        </div>
+    </div>
+    <div class="coin-container">
+        <div (click)="selectCoin(1.0);">
+            <img src="./assets/image/1dollar.png">
+            <div>
+                MYR 1.00
+            </div>
+        </div>
+        <div (click)="selectCoin(-1);">
+            <img src="./assets/image/unknowncoin.png">
+            <div>
+                Unknown
+            </div>
+        </div>
+    </div>
 </div>
