@@ -8,13 +8,13 @@
 
   <!-- Message -->
   <div class="text-to-user">
-      <div class="output-display">
-        <div class="output-panel">
-          {{ textToUser }}
-        </div>
+    <div class="output-display">
+      <div class="output-panel">
+        {{ textToUser }}
       </div>
     </div>
-    
+  </div>
+
   <!-- Drink selection -->
   <div class="drink-selection">
     <div class="scroll" scrollX="true">
@@ -31,7 +31,7 @@
 
   <!-- Action -->
   <div class="ion-text-right">
-    <ion-button color="primary">Insert</ion-button>
+    <ion-button color="primary" (click)="insertCoin()">Insert</ion-button>
     <ion-button color="warning">Terminate</ion-button>
   </div>
 </ion-content>

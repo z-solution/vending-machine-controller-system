@@ -1,0 +1,17 @@
+.background-cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.75;
+    z-index: 50;
+}
+.background {
+  background-color: #ffffff;
+  width: 80%;
+  height: 60%;
+  margin: auto;
+  z-index: 55;
+}

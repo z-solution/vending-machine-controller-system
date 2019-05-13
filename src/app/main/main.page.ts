@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/shared/model/brand';
+import { ModalController } from '@ionic/angular';
+import { InsertCoinComponent } from '../modal/insert-coin/insert-coin.component';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +12,7 @@ export class MainPage implements OnInit {
   textToUser: string = "textToUser";
   brands: Brand[] = [];
 
-  constructor() {
+  constructor(private modalController: ModalController) {
     let temp = new Brand('miranda', 5, 0.7, './assets/image/miranda-orange2.jpg')
     this.brands.push(temp);
     temp = new Brand('seven up', 5, 0.7, './assets/image/7-up2.jpg')
@@ -27,6 +29,15 @@ export class MainPage implements OnInit {
   }
   ionViewWillEnter() {
     console.log('ionViewWillEnter')
+  }
+
+  async insertCoin() {
+    const s = this;
+    const modal = await s.modalController.create({
+      component: InsertCoinComponent
+    });
+    return await modal.present();
+
   }
 
 }

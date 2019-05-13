@@ -1,1 +1,1 @@
-ng g page main
+ng g component modal/InsertCoin
