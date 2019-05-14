@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/shared/model/brand';
 import { ModalController } from '@ionic/angular';
 import { InsertCoinComponent } from '../modal/insert-coin/insert-coin.component';
+import { BrandServiceProvider } from '../providers/brand-service/brand-service';
+import { CoinServiceProvider } from '../providers/coin-service/coin-service';
 
 @Component({
   selector: 'app-main',
@@ -12,22 +14,17 @@ export class MainPage implements OnInit {
   textToUser: string = "";
   brands: Brand[] = [];
   selectBrand: Brand = null;
-  isCoidInserted: boolean = false;
   coinValue: number = 0;
   returnCoinValue: number = 0;
+  isInvalidCoin: boolean = false;
+  collectDrinkText: string = '';
+  isHaveChange: boolean = true;
 
-  constructor(private modalController: ModalController) {
+  constructor(private modalController: ModalController,
+    private brandService: BrandServiceProvider,
+    private coinService: CoinServiceProvider) {
     // TODO
-    let brand = new Brand('miranda', 0, 0.7, './assets/image/miranda-orange2.jpg')
-    this.brands.push(brand);
-    brand = new Brand('seven up', 5, 0.7, './assets/image/7-up2.jpg')
-    this.brands.push(brand);
-    brand = new Brand('pepsi', 5, 0.7, './assets/image/pepsi.jpeg')
-    this.brands.push(brand);
-    brand = new Brand('fanta', 5, 0.7, './assets/image/fanta-orange2.jpg')
-    this.brands.push(brand);
-    brand = new Brand('coca-cola', 5, 0.7, './assets/image/coca-cola.jpg')
-    this.brands.push(brand);
+    this.brands = this.brandService.getBrands();
   }
 
   ngOnInit() {
@@ -35,47 +32,61 @@ export class MainPage implements OnInit {
 
   async insertCoin() {
     const s = this;
-    if (this.selectBrand !== null) {
-      const modal = await s.modalController.create({
-        component: InsertCoinComponent
+    const modal = await s.modalController.create({
+      component: InsertCoinComponent
+    });
+    modal.onDidDismiss()
+      .then((data: any) => {
+        s.coinInserted(data.data);
       });
-      modal.onDidDismiss()
-        .then((data: any) => {
-          s.coinInserted(data.data);
-        });
-      return await modal.present();
-    }
+    return await modal.present();
   }
 
   coinInserted(value: number) {
+    this.isInvalidCoin = false;
     if (value < 0) {
-      this.textToUser = 'COINS NOT VALID';
+      this.isInvalidCoin = true;
     }
     else {
-      this.coinValue += value;
-      if (this.coinValue < this.selectBrand.price) {
-        this.textToUser = 'Total ' + this.coinValue.toFixed(2);
-      }
-      else {
-        this.dispenseDrink();
+      this.coinService.insertedCoin(value);
+      this.coinValue = this.coinService.getCumulativeCoin();
+      if (!!this.selectBrand) {
+        if (this.coinValue >= this.selectBrand.price) {
+          this.dispenseDrink();
+        }
       }
     }
   }
 
   dispenseDrink() {
-    console.log('dispense drink');
     this.returnCoinValue += this.coinValue - this.selectBrand.price;
     this.selectBrand.quantity--;
+    if (this.collectDrinkText != '') {
+      this.collectDrinkText += '<br>'
+    }
+    this.collectDrinkText += String(this.selectBrand.name).toUpperCase();
+    this.isHaveChange = !!this.coinService.gotChangeAvailable(this.selectBrand.price);
+    this.returnCoinValue = this.coinService.getDispenseCoinValue(this.selectBrand.price);
+    this.selectBrand = null;
+    this.coinValue = 0;
   }
 
   selectDrink(brand: Brand) {
     this.selectBrand = null;
-    if( brand.quantity <= 0 ){
-      this.textToUser = 'Drinks brand not available';
+    if (brand.quantity <= 0) {
+      return;
     }
-    else if (!this.isCoidInserted) {
-      this.selectBrand = brand;
-      this.textToUser = 'Insert Coin';
+    this.selectBrand = brand;
+    if (this.coinValue >= this.selectBrand.price) {
+      this.dispenseDrink();
     }
+  }
+
+  terminateTransaction() {
+    this.selectBrand = null;
+    this.isHaveChange = true;
+    this.isInvalidCoin = false;
+    this.coinValue = 0;
+    this.coinService.terminateTransaction();
   }
 }

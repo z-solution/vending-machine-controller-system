@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar class="background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>VIMTO SOFT DRINK DISPENCER</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,19 +10,19 @@
 <ion-content>
   <div class="insert-coin">
     <div class="insert-coin1">INSERT COIN HERE</div>
-    <div class="insert-coin2">
-      <div class="insert-coin2-1">
+    <div class="insert-coin2 s">
+      <div class="insert-coin2-1" (click)="insertCoin()">
         <div class="insert-coin2-2">
         </div>
       </div>
     </div>
-    <div class="insert-coin3">COINS NOT VALID</div>
+    <div class="insert-coin3"><span *ngIf="isInvalidCoin">COINS NOT VALID</span></div>
   </div>
 
 
   <div class="total-insert-coin">
     <div class="total-insert-coin1">TOTAL MONEY INSERTED</div>
-    <div class="total-insert-coin3">{{ coinValue }}</div>
+    <div class="total-insert-coin3">MYR {{ coinValue | number: '1.2-2'}}</div>
   </div>
 
 
@@ -28,7 +31,8 @@
       <tr>
         <th class="column1">SELECT DRINK BRAND BELOW</th>
         <th class="column2">PRICE</th>
-        <th class="column3"></th>
+        <th class="column3">
+        </th>
         <th class="column4">PRESS TO SELECT</th>
       </tr>
       <tr *ngFor="let brand of brands">
@@ -38,9 +42,12 @@
         <td>
           MYR {{ brand.price | number: '1.2-2'}}
         </td>
-        <td></td>
         <td>
-          <div class="drink-selection-button"></div>
+          <span *ngIf="selectBrand == brand">SELECTED</span>
+          <span *ngIf="brand.quantity <= 0">BRAND UNAVAILABLE</span>
+        </td>
+        <td>
+          <div class="drink-selection-button" (click)="selectDrink(brand)"></div>
         </td>
       </tr>
     </table>
@@ -48,7 +55,10 @@
 
 
   <div class="no-charge-available">
-    NO CHARGE AVAILABLE
+    &nbsp;
+    <span *ngIf="!isHaveChange">
+      NO CHARGE AVAILABLE
+    </span>
   </div>
 
 
@@ -57,7 +67,7 @@
       <div class="termination-text">
         PRESS HERE TO RETURN CASH AND TERMINATE TRANSACTION HERE
       </div>
-      <div class="termination2">
+      <div class="termination2" (click)="terminateTransaction()">
         <div class="termination2-1">
           <div class="termination2-2">
           </div>
@@ -72,6 +82,7 @@
       <div class="collect-change2">
         <div class="collect-change2-1">
           <div class="collect-change2-2">
+            MYR {{ returnCoinValue | number: '1.2-2'}}
           </div>
         </div>
       </div>
@@ -80,13 +91,13 @@
 
 
   <div class="collect-can">
-      <div class="collect-can1">COLLECT CAN HERE
-      </div>
-      <div class="collect-can2">
-          <div class="collect-can2-1">
-            <div class="collect-can2-2">
-            </div>
-          </div>
-        </div>
+    <div class="collect-can1">COLLECT CAN HERE
     </div>
+    <div class="collect-can2">
+      <div class="collect-can2-1">
+        <div class="collect-can2-2" [innerHTML]="collectDrinkText">
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

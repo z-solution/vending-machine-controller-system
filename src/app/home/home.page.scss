@@ -1,3 +1,15 @@
+ion-header,
+ion-content,
+ion-footer {
+  --ion-background-color: var(--ion-color-bg-rgb);
+  background-color: var(--ion-color-bg-rgb);
+}
+ion-header div,
+ion-footer div,
+.background-color {
+  background-color: var(--ion-color-bg-rgb);
+  --background: var(--ion-color-bg-rgb);
+}
 ion-title {
   position: absolute;
   top: 0;

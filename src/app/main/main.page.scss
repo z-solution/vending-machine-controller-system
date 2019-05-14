@@ -11,76 +11,6 @@ ion-footer div,
   --background: var(--ion-color-bg-rgb);
 }
 
-.text-to-user {
-  height: 50px;
-  padding: 5px 10px;
-  margin: 30px 10px;
-  .output-display {
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-    height: 40px;
-    padding: 0 20px;
-    .output-panel {
-      background-color: rgb(147, 247, 54);
-      height: 30px;
-      margin-top: 3px;
-      padding: 5px 10px;
-    }
-  }
-}
-
-.drink-selection {
-  height: 140px;
-  width: calc(100% - 20px);
-  background-color: #cccccc;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 30px 10px;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  .scroll {
-    overflow: auto;
-    height: 100%;
-    > div {
-      display: inline-block;
-      height: calc(100% - 40px);
-      margin: 20px 10px;
-    }
-    .drink-brand {
-      text-align: center;
-      width: 100px;
-      background-color: #ffffff;
-      > img {
-        height: 60px;
-        width: 60px;
-      }
-      &.disable {
-        opacity: 0.4;
-      }
-    }
-  }
-}
-.user-button {
-  margin: 30px 10px;
-}
-.selected-brand {
-  box-shadow: orange 0 0 7px 1px;
-}
-
-.output {
-  border: solid 2px white;
-  background-image: linear-gradient(var(--ion-color-darkgrey-rgb), var(--ion-color-bg-rgb));
-  margin: 10px;
-  height: 50px;
-  &.coin {
-    width: 50px;
-    display: inline-block;
-    position: relative;
-    right: 0;
-  }
-}
-
 .insert-coin {
   .insert-coin1 {
     border: solid 1px black;
@@ -122,6 +52,7 @@ ion-footer div,
   .insert-coin3 {
     width: 110px;
     display: inline-block;
+    height: 30px;
     padding: 5px;
     border: solid 1px black;
     position: absolute;
@@ -142,6 +73,7 @@ ion-footer div,
     width: calc(100% - 155px);
   }
   .total-insert-coin3 {
+    height: 30px;
     display: inline-block;
     padding: 5px;
     border: solid 1px black;
@@ -267,6 +199,7 @@ ion-footer div,
         background-color: var(--ion-color-grey-rgb);
         border: solid 1px black;
         .collect-change2-2 {
+          text-align: center;
           background-color: #ffffff;
           height: 20px;
           margin-top: 4px;
@@ -290,7 +223,6 @@ ion-footer div,
     height: 30px;
     width: 150px;
     position: relative;
-    
   }
   .collect-can2 {
     display: inline-block;
@@ -309,6 +241,7 @@ ion-footer div,
         margin-top: 4px;
         width: calc(100% - 40px);
         margin-left: 20px;
+        overflow: auto;
       }
     }
   }
