@@ -12,4 +12,8 @@ export class HomePage {
   activateCustomerPanel() {
     this.router.navigate(['/main'])
   }
+
+  activateMaintainerPanel() {
+    this.router.navigate(['/maintainer'])
+  }
 }

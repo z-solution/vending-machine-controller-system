@@ -1,0 +1,256 @@
+ion-header,
+ion-content,
+ion-footer {
+  --ion-background-color: var(--ion-color-bg-rgb);
+  background-color: var(--ion-color-bg-rgb);
+}
+ion-header div,
+ion-footer div,
+.background-color {
+  background-color: var(--ion-color-bg-rgb);
+  --background: var(--ion-color-bg-rgb);
+}
+.subtitle {
+  font-size: 9px;
+}
+.type-password {
+  width: 225px;
+  background-color: var(--ion-color-grey-rgb);
+  border: solid 1px black;
+  margin: auto;
+  padding: 5px 10px;
+  .type-password1 {
+    display: inline-block;
+  }
+  .type-password2 {
+    width: 70px;
+    margin-left: 5px;
+    display: inline-block;
+  }
+}
+.password-valid-not {
+  text-align: center;
+  margin-top: 10px;
+  .password-valid-not1 {
+    display: inline-block;
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+  }
+  .password-valid-not2 {
+    display: inline-block;
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+  }
+}
+.coin-denomination {
+  text-align: center;
+  padding: 10px;
+  .coin-denomination1 {
+    text-align: center;
+    border: solid 1px black;
+    padding: 5px 10px;
+    background-color: var(--ion-color-grey-rgb);
+  }
+  .coin-denomination2 {
+    text-align: center;
+    border: solid 1px black;
+    .coin-denomination2-1,
+    .coin-denomination2-2,
+    .coin-denomination2-3,
+    .coin-denomination2-4 {
+      border: solid 1px black;
+      background-color: var(--ion-color-grey-rgb);
+      width: 20%;
+      margin: 5px 2%;
+      padding: 5px 0;
+      display: inline-block;
+      border-radius: 50px;
+    }
+  }
+  .coin-denomination4 {
+    text-align: right;
+    padding-right: 10px;
+    border: solid 1px black;
+    display: inline-block;
+    height: 30px;
+    vertical-align: top;
+    width: 60%;
+  }
+  .coin-denomination5 {
+    text-align: center;
+    border: solid 1px black;
+    display: inline-block;
+    height: 30px;
+    vertical-align: top;
+    width: 40%;
+  }
+}
+.drink-selection {
+  padding: 0 10px;
+  text-align: center;
+  .drink-selection1 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+  }
+  .drink-selection2 {
+    width: 100%;
+    .drink-selection2-1,
+    .drink-selection2-2,
+    .drink-selection2-3 {
+      border: solid 1px black;
+      padding: 5px 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .drink-selection2-1 {
+      width: 50%;
+    }
+    .drink-selection2-2 {
+      width: 30%;
+    }
+    .drink-selection2-3 {
+      width: 20%;
+      .drink-selection2-3-1 {
+        border: solid 1px black;
+        background-color: var(--ion-color-grey-rgb);
+        width: 80%;
+        margin: 0 10%;
+        height: 12px;
+      }
+    }
+  }
+  .drink-selection3 {
+    .drink-selection3-1,
+    .drink-selection3-2 {
+      display: inline-block;
+      border: solid 1px black;
+      padding: 5px 10px;
+      height: 30px;
+      vertical-align: top;
+    }
+    .drink-selection3-1 {
+      width: 80%;
+    }
+    .drink-selection3-2 {
+      width: 20%;
+      background-color: var(--ion-color-grey-rgb);
+      input {
+        width: 45px;
+      }
+    }
+  }
+}
+
+.total-cash-held {
+  margin-top: 10px;
+  padding: 0 10px;
+  .total-cash-held1 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    display: inline-block;
+    width: 80%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+  }
+  .total-cash-held2 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+    display: inline-block;
+    width: 20%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+  }
+}
+
+.press-to-collect-cash {
+  margin-top: 10px;
+  padding: 0 10px;
+  .press-to-collect-cash1 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    display: inline-block;
+    width: 80%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+  }
+  .press-to-collect-cash2 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+    display: inline-block;
+    width: 20%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+    div {
+      background-color: #ffffff;
+      height: 24px;
+    }
+  }
+}
+
+
+.collect-cash-here {
+  margin-top: 10px;
+  padding: 0 10px;
+  .collect-cash-here1 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    display: inline-block;
+    width: 40%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+  }
+  .collect-cash-here2 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+    display: inline-block;
+    width: 60%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+    div {
+      background-color: #ffffff;
+      height: 24px;
+      padding-top: 6px;
+    }
+  }
+}
+
+
+.press-when-finish {
+  margin-top: 10px;
+  padding: 0 10px;
+  .press-when-finish1 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    display: inline-block;
+    width: 80%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+  }
+  .press-when-finish2 {
+    padding: 5px 10px;
+    border: solid 1px black;
+    background-color: var(--ion-color-grey-rgb);
+    display: inline-block;
+    width: 20%;
+    height: 36px;
+    vertical-align: top;
+    text-align: center;
+    div {
+      background-color: #ffffff;
+      height: 24px;
+    }
+  }
+}
