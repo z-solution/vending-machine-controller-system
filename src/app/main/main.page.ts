@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { InsertCoinComponent } from '../modal/insert-coin/insert-coin.component';
 import { BrandServiceProvider } from '../providers/brand-service/brand-service';
 import { CoinServiceProvider } from '../providers/coin-service/coin-service';
+import { TransactionServiceProvider } from '../providers/transaction-service/transaction-service';
 
 @Component({
   selector: 'app-main',
@@ -22,12 +23,14 @@ export class MainPage implements OnInit {
 
   constructor(private modalController: ModalController,
     private brandService: BrandServiceProvider,
-    private coinService: CoinServiceProvider) {
-    // TODO
+    private coinService: CoinServiceProvider,
+    private transactionService: TransactionServiceProvider) {
     this.brands = this.brandService.getBrands();
   }
 
   ngOnInit() {
+    this.selectBrand = this.transactionService.getSelectedBrand();
+    this.coinValue = this.coinService.getCumulativeCoin();
   }
 
   async insertCoin() {
@@ -73,9 +76,11 @@ export class MainPage implements OnInit {
 
   selectDrink(brand: Brand) {
     this.selectBrand = null;
+    this.transactionService.selectingBrand(null);
     if (brand.quantity <= 0) {
       return;
     }
+    this.transactionService.selectingBrand(brand);
     this.selectBrand = brand;
     if (this.coinValue >= this.selectBrand.price) {
       this.dispenseDrink();

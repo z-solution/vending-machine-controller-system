@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MachineryServiceProvider } from '../providers/machinery/machinery';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    public machineService: MachineryServiceProvider) { }
 
   activateCustomerPanel() {
     this.router.navigate(['/main'])
@@ -19,5 +21,13 @@ export class HomePage {
 
   activateMachineryPanel() {
     this.router.navigate(['/machinery'])
+  }
+
+  turnOffPower() {
+    this.machineService.turnOffPower();
+  }
+  
+  turnOnPower() {
+    this.machineService.turnOnPower();
   }
 }

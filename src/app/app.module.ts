@@ -12,6 +12,7 @@ import { InsertCoinComponent } from './modal/insert-coin/insert-coin.component';
 import { BrandServiceProvider } from './providers/brand-service/brand-service';
 import { CoinServiceProvider } from './providers/coin-service/coin-service';
 import { MachineryServiceProvider } from './providers/machinery/machinery';
+import { TransactionServiceProvider } from './providers/transaction-service/transaction-service';
 
 @NgModule({
   declarations: [AppComponent, InsertCoinComponent],
@@ -25,6 +26,7 @@ import { MachineryServiceProvider } from './providers/machinery/machinery';
     BrandServiceProvider,
     CoinServiceProvider,
     MachineryServiceProvider,
+    TransactionServiceProvider,
     {
       provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy

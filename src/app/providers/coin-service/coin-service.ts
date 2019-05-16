@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class CoinServiceProvider {
   cumulativeCoin: any = {
     '10': {
-      store: 13,
+      store: 0,
       transaction: 0
     },
     '20': {

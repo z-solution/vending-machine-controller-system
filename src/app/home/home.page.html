@@ -6,16 +6,20 @@
     <div class="title">
       BEGIN SIMULATION
     </div>
-    <div class="button">
-      PRESS
+    <div class="button" (click)="turnOnPower()">
+      <span *ngIf="!machineService.power">
+        PRESS
+      </span>
     </div>
   </div>
   <div class="action-option">
     <div class="title">
       END SIMULATION
     </div>
-    <div class="button">
-      PRESS
+    <div class="button" (click)="turnOffPower()">
+      <span *ngIf="machineService.power">
+        PRESS
+      </span>
     </div>
   </div>
   <div class="action-option">
