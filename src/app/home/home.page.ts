@@ -16,4 +16,8 @@ export class HomePage {
   activateMaintainerPanel() {
     this.router.navigate(['/maintainer'])
   }
+
+  activateMachineryPanel() {
+    this.router.navigate(['/machinery'])
+  }
 }

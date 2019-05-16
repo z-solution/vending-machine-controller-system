@@ -108,6 +108,9 @@ ion-footer div,
     }
     td {
       padding: 5px;
+      &.column2 {
+        text-align: center;
+      }
       .drink-selection-button {
         border-radius: 20px;
         height: 26px;

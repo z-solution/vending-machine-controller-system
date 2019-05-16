@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { InsertCoinComponent } from './modal/insert-coin/insert-coin.component';
 import { BrandServiceProvider } from './providers/brand-service/brand-service';
 import { CoinServiceProvider } from './providers/coin-service/coin-service';
+import { MachineryServiceProvider } from './providers/machinery/machinery';
 
 @NgModule({
   declarations: [AppComponent, InsertCoinComponent],
@@ -23,6 +24,7 @@ import { CoinServiceProvider } from './providers/coin-service/coin-service';
     SplashScreen,
     BrandServiceProvider,
     CoinServiceProvider,
+    MachineryServiceProvider,
     {
       provide: RouteReuseStrategy,
       useClass: IonicRouteStrategy

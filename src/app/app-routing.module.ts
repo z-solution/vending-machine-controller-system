@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'maintainer', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'main', loadChildren: './main/main.module#MainPageModule' },
   { path: 'maintainer', loadChildren: './maintainer/maintainer.module#MaintainerPageModule' },
+  { path: 'machinery', loadChildren: './machinery/machinery.module#MachineryPageModule' },
 ];
 
 @NgModule({

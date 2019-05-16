@@ -21,36 +21,35 @@ ion-title {
 }
 
 .ion-padding {
-    --ion-safe-area-top: 20px;
+  --ion-safe-area-top: 20px;
   text-align: center;
   padding-top: calc(constant(safe-area-inset-top) + 15px);
   padding: 35px;
 }
 .action-option {
-    width: calc(100% - 20px);
-    margin: 25px auto;
-    border: solid 1px black;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    height: 60px;
-    
-    .title {
-        padding: 10px 0 10px 10px ;
-        display: inline-block;
-        width: calc(100% - 90px);
-        height: 60px;
-        vertical-align: middle
+  width: calc(100% - 20px);
+  margin: 25px auto;
+  border: solid 1px black;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 60px;
 
-    }
-    .button {
-        height: 60px;
-        vertical-align: top;
-        padding: 10px 0;
-        text-align: center;
-        border: solid 1px black;
-        width: 90px;
-        border-radius: 50px;
-        display: inline-block;
-        line-height: 40px;
-    }
+  .title {
+    padding: 10px 0 10px 10px;
+    display: inline-block;
+    width: calc(100% - 90px);
+    height: 60px;
+    vertical-align: middle;
+  }
+  .button {
+    height: 60px;
+    vertical-align: top;
+    padding: 10px 0;
+    text-align: center;
+    border: solid 1px black;
+    width: 90px;
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 40px;
+  }
 }

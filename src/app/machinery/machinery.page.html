@@ -1,0 +1,80 @@
+<ion-header no-border>
+  <ion-toolbar class="background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      MACHINERY SIMULATION CONTROL PANEL
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="number-of-drink-can">
+    <div class="number-of-drink-can1">
+      <div class="number-of-drink-can1-1">
+        &nbsp;
+      </div>
+      <div class="number-of-drink-can1-2">
+        DISPLAY/ENTER NEW VALUE
+      </div>
+    </div>
+    <div class="number-of-drink-can2" *ngFor="let brand of brands">
+      <div class="number-of-drink-can2-1">{{ brand.name | uppercase }}</div>
+      <div class="number-of-drink-can2-2">
+        <input type="number" [(ngModel)]="brand.quantity">
+      </div>
+    </div>
+  </div>
+
+  <div class="number-of-coin">
+    <div class="number-of-coin1">
+      <div class="number-of-coin1-1">
+        &nbsp;
+      </div>
+      <div class="number-of-coin1-2">
+        DISPLAY/ENTER NEW VALUE
+      </div>
+    </div>
+    <div class="number-of-coin2">
+      <div class="number-of-coin2-1">NUMBER OF MYR 0.10 COINS</div>
+      <div class="number-of-coin2-2">
+        <input type="number" [(ngModel)]="coins[10].store">
+      </div>
+    </div>
+    <div class="number-of-coin2">
+      <div class="number-of-coin2-1">NUMBER OF MYR 0.20 COINS</div>
+      <div class="number-of-coin2-2">
+        <input type="number" [(ngModel)]="coins[20].store">
+      </div>
+    </div>
+    <div class="number-of-coin2">
+      <div class="number-of-coin2-1">NUMBER OF MYR 0.50 COINS</div>
+      <div class="number-of-coin2-2">
+        <input type="number" [(ngModel)]="coins[50].store">
+      </div>
+    </div>
+    <div class="number-of-coin2">
+      <div class="number-of-coin2-1">NUMBER OF MYR 100 COINS</div>
+      <div class="number-of-coin2-2">
+        <input type="number" [(ngModel)]="coins[100].store">
+      </div>
+    </div>
+  </div>
+
+  <div class="machine-lock-status">
+    <div class="machine-lock-status1">
+      STATUS OF VENDING MACHINE<br>
+    </div>
+    <div class="machine-lock-status2">
+      <span *ngIf="machineryService.lock">
+        LOCKED
+      </span>
+    </div>
+    <div class="machine-lock-status3">
+      <span *ngIf="!machineryService.lock">
+        UNLOCKED
+      </span>
+    </div>
+  </div>
+</ion-content>

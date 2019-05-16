@@ -1,6 +1,8 @@
 {
   "name": "vmcs",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "61a45292"
 }

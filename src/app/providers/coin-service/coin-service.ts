@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class CoinServiceProvider {
   cumulativeCoin: any = {
     '10': {
-      store: 0,
+      store: 13,
       transaction: 0
     },
     '20': {
@@ -33,6 +33,14 @@ export class CoinServiceProvider {
     return total;
   }
 
+  getCumulativeStoreCoin() {
+    let total = 0;
+    total += (this.cumulativeCoin['10'].store * 0.1)
+    total += (this.cumulativeCoin['20'].store * 0.2)
+    total += (this.cumulativeCoin['50'].store * 0.5)
+    total += (this.cumulativeCoin['100'].store * 1)
+    return total;
+  }
   gotChangeAvailable(price) {
     let val = this.getDispenseCoin(price);
     return val[0];
@@ -139,5 +147,12 @@ export class CoinServiceProvider {
     this.cumulativeCoin[20].transaction = 0;
     this.cumulativeCoin[50].transaction = 0;
     this.cumulativeCoin[100].transaction = 0;
+  }
+
+  drawStoreCoin() {
+    this.cumulativeCoin['10'].store = 0;
+    this.cumulativeCoin['20'].store = 0;
+    this.cumulativeCoin['50'].store = 0;
+    this.cumulativeCoin['100'].store = 0;
   }
 }

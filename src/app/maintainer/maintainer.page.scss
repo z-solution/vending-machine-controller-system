@@ -23,7 +23,7 @@ ion-footer div,
     display: inline-block;
   }
   .type-password2 {
-    width: 70px;
+    width: 50px;
     margin-left: 5px;
     display: inline-block;
   }
@@ -32,13 +32,19 @@ ion-footer div,
   text-align: center;
   margin-top: 10px;
   .password-valid-not1 {
+    width: 120px;
     display: inline-block;
+    height: 40px;
+    vertical-align: top;
     padding: 5px 10px;
     border: solid 1px black;
     background-color: var(--ion-color-grey-rgb);
   }
   .password-valid-not2 {
+    width: 131px;
     display: inline-block;
+    height: 40px;
+    vertical-align: top;
     padding: 5px 10px;
     border: solid 1px black;
     background-color: var(--ion-color-grey-rgb);
@@ -85,6 +91,13 @@ ion-footer div,
     height: 30px;
     vertical-align: top;
     width: 40%;
+    line-height: 25px;
+  }
+  .coin-denomination2-1.selected,
+  .coin-denomination2-2.selected,
+  .coin-denomination2-3.selected,
+  .coin-denomination2-4.selected {
+    border: solid 3px black !important;
   }
 }
 .drink-selection {
@@ -97,6 +110,9 @@ ion-footer div,
   }
   .drink-selection2 {
     width: 100%;
+    &.selected {
+      font-weight: 800;
+    }
     .drink-selection2-1,
     .drink-selection2-2,
     .drink-selection2-3 {
@@ -196,7 +212,6 @@ ion-footer div,
   }
 }
 
-
 .collect-cash-here {
   margin-top: 10px;
   padding: 0 10px;
@@ -225,7 +240,6 @@ ion-footer div,
     }
   }
 }
-
 
 .press-when-finish {
   margin-top: 10px;

@@ -1,0 +1,130 @@
+ion-header,
+ion-content,
+ion-footer {
+  --ion-background-color: var(--ion-color-bg-rgb);
+  background-color: var(--ion-color-bg-rgb);
+}
+ion-footer div,
+.background-color {
+  background-color: var(--ion-color-bg-rgb);
+  --background: var(--ion-color-bg-rgb);
+}
+
+.number-of-drink-can {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 20px;
+  .number-of-drink-can1 {
+    .number-of-drink-can1-1 {
+      width: 70%;
+      border: solid 1px var(--ion-color-bg-rgb);
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+    }
+    .number-of-drink-can1-2 {
+      width: 30%;
+      border: solid 1px black;
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+    }
+  }
+  .number-of-drink-can2 {
+    .number-of-drink-can2-1 {
+      width: 70%;
+      border: solid 1px black;
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+    }
+    .number-of-drink-can2-2 {
+      width: 30%;
+      border: solid 1px black;
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+      background-color: var(--ion-color-grey-rgb);
+      input {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.number-of-coin {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 20px;
+  .number-of-coin1 {
+    .number-of-coin1-1 {
+      width: 70%;
+      border: solid 1px var(--ion-color-bg-rgb);
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+    }
+    .number-of-coin1-2 {
+      width: 30%;
+      border: solid 1px black;
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+    }
+  }
+  .number-of-coin2 {
+    .number-of-coin2-1 {
+      width: 70%;
+      border: solid 1px black;
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+    }
+    .number-of-coin2-2 {
+      width: 30%;
+      border: solid 1px black;
+      display: inline-block;
+      height: 36px;
+      padding: 5px;
+      vertical-align: top;
+      background-color: var(--ion-color-grey-rgb);
+      input {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+.machine-lock-status {
+  margin-top: 10px;
+  padding: 0 20px;
+  .machine-lock-status1,
+  .machine-lock-status2,
+  .machine-lock-status3 {
+    border: solid 1px black;
+    display: inline-block;
+    padding: 5px 5px;
+    height: 52px;
+    vertical-align: top;
+    text-align: center;
+  }
+  .machine-lock-status1 {
+    width: 50%;
+  }
+  .machine-lock-status2 {
+    width: 25%;
+    background-color: var(--ion-color-grey-rgb);
+  }
+  .machine-lock-status3 {
+    width: 25%;
+    background-color: var(--ion-color-grey-rgb);
+  }
+}

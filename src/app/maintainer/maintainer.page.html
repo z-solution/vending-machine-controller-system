@@ -11,19 +11,17 @@
 </ion-header>
 
 <ion-content>
-
-
   <div class="type-password">
     <div class="type-password1">TYPE PASSWORD HERE</div>
-    <input type="password" class="type-password2">
+    <input type="password" class="type-password2" [(ngModel)]="password">
   </div>
 
   <div class="password-valid-not">
     <div class="password-valid-not1">
-      <span>PASSWORD VALID</span>
+      &nbsp;<span *ngIf="password == hardcodedPassword">PASSWORD VALID</span>
     </div>
     <div class="password-valid-not2">
-      <span>PASSWORD INVALID</span>
+      &nbsp;<span *ngIf="password != hardcodedPassword">PASSWORD INVALID</span>
     </div>
   </div>
 
@@ -32,27 +30,31 @@
       PRESS BELOW TO DETERMINE NUMBER OF COINS IN SELECTED DENOMINATION
     </div>
     <div class="coin-denomination2">
-      <div class="coin-denomination2-1">MYR 0.10</div>
-      <div class="coin-denomination2-2">MYR 0.20</div>
-      <div class="coin-denomination2-3">MYR 0.50</div>
-      <div class="coin-denomination2-4">MYR 1.00</div>
+      <div class="coin-denomination2-1" [ngClass]="{'selected': selectedDenomination == 0.1}"
+        (click)="selectDenomination(0.1)">MYR 0.10</div>
+      <div class="coin-denomination2-2" [ngClass]="{'selected': selectedDenomination == 0.2}"
+        (click)="selectDenomination(0.2)">MYR 0.20</div>
+      <div class="coin-denomination2-3" [ngClass]="{'selected': selectedDenomination == 0.5}"
+        (click)="selectDenomination(0.5)">MYR 0.50</div>
+      <div class="coin-denomination2-4" [ngClass]="{'selected': selectedDenomination == 1}"
+        (click)="selectDenomination(1)">MYR 1.00</div>
     </div>
     <div class="coin-denomination3">
       <div class="coin-denomination4">
         TOTAL NUMBER OF COINS IN SELECTED DENOMINATION
       </div>
       <div class="coin-denomination5">
-        &nbsp;
+        &nbsp; {{ numberOfDenominationCoin }}
       </div>
     </div>
   </div>
   <div class="drink-selection">
     <div class="drink-selection1">SELECT BRAND</div>
-    <div class="drink-selection2">
-      <div class="drink-selection2-1">BRAND 1</div>
-      <div class="drink-selection2-2">MYR 0.70</div>
+    <div class="drink-selection2" *ngFor="let brand of brands" [ngClass]="{'selected': selectedBrand == brand}">
+      <div class="drink-selection2-1">{{ brand.name | uppercase }}</div>
+      <div class="drink-selection2-2">MYR {{ brand.price | number: '1.2-2'}}</div>
       <div class="drink-selection2-3">
-        <div class="drink-selection2-3-1">
+        <div class="drink-selection2-3-1" (click)="selectBrand(brand);">
           &nbsp;
         </div>
       </div>
@@ -62,7 +64,7 @@
         TYPE NEW DRINKS CAN PRICE HERE
       </div>
       <div class="drink-selection3-2">
-        <input type="number">
+        <input type="number" [(ngModel)]="selectedBrand.price">
       </div>
     </div>
   </div>
@@ -73,7 +75,7 @@
     </div>
     <div class="total-cash-held2">
       <div>
-        MYR 1.00
+        MYR {{ totalCoinValue | number: '1.2-2'}}
       </div>
     </div>
   </div>
@@ -84,7 +86,7 @@
       PRESS HERE TO CLLECT ALL CASH
     </div>
     <div class="press-to-collect-cash2">
-      <div>
+      <div (click)="drawCoin()">
         &nbsp;
       </div>
     </div>
@@ -96,19 +98,19 @@
     </div>
     <div class="collect-cash-here2">
       <div>
-        MYR 1.00
+        MYR {{ drawCoinValue | number: '1.2-2'}}
       </div>
     </div>
   </div>
 
   <div class="press-when-finish">
-      <div class="press-when-finish1">
-        PRESS HERE WHEN FINISHED
-      </div>
-      <div class="press-when-finish2">
-        <div>
-          &nbsp;
-        </div>
+    <div class="press-when-finish1">
+      PRESS HERE WHEN FINISHED
+    </div>
+    <div class="press-when-finish2">
+      <div (click)="goBack()">
+        &nbsp;
       </div>
     </div>
+  </div>
 </ion-content>
