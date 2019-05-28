@@ -80,7 +80,7 @@
   <div class="collect-change">
     <div class="collect-change1">COLLECT CHANGE/RETURNED CASH HERE
       <div class="collect-change2">
-        <div class="collect-change2-1">
+        <div class="collect-change2-1" (click)="collectChange()">
           <div class="collect-change2-2">
             MYR {{ returnCoinValue | number: '1.2-2'}}
           </div>
@@ -95,7 +95,7 @@
     </div>
     <div class="collect-can2">
       <div class="collect-can2-1">
-        <div class="collect-can2-2" [innerHTML]="collectDrinkText">
+        <div class="collect-can2-2" [innerHTML]="collectDrinkText" (click)="collectDrink()">
         </div>
       </div>
     </div>

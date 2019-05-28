@@ -1,10 +1,12 @@
-ng g component modal/InsertCoin
+# Vending Machine Control System Simulator
+This is an app for one of the group project of the Software Design course in Universiti Teknologi Malaysia.
 
-ng g page maintainer
-ng g page machinery
+## Member
 
+Muhammad Azizol Aminuddin - MAN181046
 
-ionic cordova build android --prod --release && 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ../vmcs.keystore  platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk vmcs &&
-rm -f platforms/android/app/build/outputs/apk/release/android-release-signed.apk &&
-./zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk platforms/android/app/build/outputs/apk/release/android-release-signed.apk
+Mohd Nizam - MAN181077
+
+AHMAD AWSAF-UZ-ZAMAN - MAN181042
+
+Zohair - MAN181070

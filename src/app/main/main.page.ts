@@ -45,6 +45,14 @@ export class MainPage implements OnInit {
     return await modal.present();
   }
 
+  collectDrink() {
+    this.collectDrinkText = '';
+  }
+
+  collectChange() {
+    this.returnCoinValue = 0;
+  }
+
   coinInserted(value: number) {
     this.isInvalidCoin = false;
     if (value < 0) {
@@ -91,6 +99,7 @@ export class MainPage implements OnInit {
     this.selectBrand = null;
     this.isHaveChange = true;
     this.isInvalidCoin = false;
+    this.returnCoinValue += this.coinValue;
     this.coinValue = 0;
     this.coinService.terminateTransaction();
   }

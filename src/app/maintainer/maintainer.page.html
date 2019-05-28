@@ -64,14 +64,14 @@
         TYPE NEW DRINKS CAN PRICE HERE
       </div>
       <div class="drink-selection3-2">
-        <input type="number" [(ngModel)]="selectedBrand.price">
+        <input type="number" [(ngModel)]="selectedBrand.price" (keyup)="limitBrandPrice(selectedBrand)">
       </div>
     </div>
   </div>
 
   <div class="total-cash-held">
     <div class="total-cash-held1">
-      PRESS HERE TO DISPLAY TOTAL CASH HELD BY MACHINE
+      TOTAL CASH HELD BY MACHINE
     </div>
     <div class="total-cash-held2">
       <div>
@@ -96,7 +96,7 @@
     <div class="collect-cash-here1">
       COLLECT ALL CASH HERE
     </div>
-    <div class="collect-cash-here2">
+    <div class="collect-cash-here2" (click)="collectCash()">
       <div>
         MYR {{ drawCoinValue | number: '1.2-2'}}
       </div>

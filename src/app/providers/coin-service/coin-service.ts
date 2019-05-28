@@ -41,6 +41,7 @@ export class CoinServiceProvider {
     total += (this.cumulativeCoin['100'].store * 1)
     return total;
   }
+  
   gotChangeAvailable(price) {
     let val = this.getDispenseCoin(price);
     return val[0];

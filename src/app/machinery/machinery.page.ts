@@ -22,5 +22,30 @@ export class MachineryPage implements OnInit {
     this.brands = this.brandSevice.getBrands();
     this.coins = this.coinService.cumulativeCoin;
   }
+  maxLimitBrand(brand: Brand) {
+    if (brand.quantity > 10)
+      brand.quantity = 10;
+    else if (brand.quantity < 0)
+      brand.quantity = 0;
+    else if (!brand.quantity)
+      brand.quantity = 0;
+  }
+  maxLimit(coins) {
+    if (coins.store > 20)
+      coins.store = 20;
+    else if (coins.store < 0)
+      coins.store = 0;
+    else if (!coins.store)
+      coins.store = 0;
+  }
 
+  lockDoor() {
+    console.log('1');
+    this.machineryService.lock = true;
+  }
+
+  unlockDoor() {
+    console.log('1');
+    this.machineryService.lock = false;
+  }
 }

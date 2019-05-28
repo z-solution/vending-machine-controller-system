@@ -41,13 +41,24 @@ export class MaintainerPage implements OnInit {
     this.selectedBrand = brand;
   }
 
+  limitBrandPrice(brand: Brand) {
+    if (brand.price < 0) {
+      brand.price = 0;
+    }
+    else if (!brand.price)
+      brand.price = 0
+  }
+
   drawCoin() {
-    this.coinService.drawStoreCoin();
     this.drawCoinValue += this.totalCoinValue;
-    this.numberOfDenominationCoin = this.coinService.cumulativeCoin[this.selectedDenomination * 100].store;
+    this.coinService.drawStoreCoin();
+    this.totalCoinValue = this.coinService.getCumulativeStoreCoin();
   }
 
   goBack() {
     this.navCtrl.back()
+  }
+  collectCash() {
+    this.drawCoinValue = 0;
   }
 }
