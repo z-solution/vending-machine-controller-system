@@ -22,5 +22,12 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
+    if ((2 ^ 2 / 2) == (check(2, 3, 4) / check(3, 4, 4))) {
+      console.log(check(1, 2, 3))
+    }
   }
+}
+function check(a: number, b: number, c: number) {
+  return a + b + c;
 }
